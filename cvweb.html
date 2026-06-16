@@ -1,450 +1,509 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trinh Le - CV</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6;
-      background: #eef1f5;
-      color: #2d2d2d;
-      padding: 40px 20px;
-    }
-    .cv {
-      max-width: 1050px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.08);
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      overflow: hidden;
-    }
-
-    /* ───── SIDEBAR ───── */
-    .sidebar {
-      background: #1a2332;
-      color: #d3d9e2;
-      padding: 40px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-    .sidebar h2 {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #8896a8;
-      margin-bottom: 10px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #2d384a;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sidebar li {
-      font-size: 13px;
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-    .sidebar li strong {
-      color: #fff;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      margin-bottom: 8px;
-      color: #c8ceda;
-    }
-    .contact-item a {
-      color: #8ab4f8;
-      text-decoration: none;
-    }
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-    .contact-icon {
-      width: 18px;
-      text-align: center;
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-    .sidebar .name {
-      display: none;
-    }
-    .photo-placeholder {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: #2d384a;
-      margin: 0 auto 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      color: #556477;
-      border: 3px solid #2c6faa;
-    }
-    .sidebar .profile-short {
-      text-align: center;
-    }
-    .sidebar .profile-short h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    .sidebar .profile-short .role {
-      font-size: 14px;
-      color: #8ab4f8;
-      margin-top: 2px;
-    }
-
-    /* skill tags in sidebar */
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .skill-tags span {
-      background: #2d384a;
-      color: #c8ceda;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 12px;
-    }
-
-    /* ───── MAIN ───── */
-    .main {
-      padding: 40px 40px 40px 36px;
-    }
-    .main-header {
-      display: none;
-    }
-    .section {
-      margin-bottom: 32px;
-    }
-    .section:last-child {
-      margin-bottom: 0;
-    }
-    .section-title {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #1a2332;
-      border-bottom: 3px solid #1a2332;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-    }
-
-    /* Profile text */
-    .profile-text p {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    .profile-text ul {
-      padding-left: 18px;
-      font-size: 14px;
-    }
-    .profile-text li {
-      margin-bottom: 5px;
-    }
-
-    /* ───── TIMELINE EXPERIENCE ───── */
-    .timeline {
-      position: relative;
-      padding-left: 24px;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 6px;
-      top: 6px;
-      bottom: 6px;
-      width: 2px;
-      background: #d0d5dd;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 28px;
-    }
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -20px;
-      top: 6px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #2c6faa;
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 2px #2c6faa;
-    }
-    .timeline-item .date {
-      font-size: 12px;
-      font-weight: 600;
-      color: #2c6faa;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
-    }
-    .timeline-item .role-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1a2332;
-    }
-    .timeline-item .company {
-      font-size: 14px;
-      font-weight: 500;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    .timeline-item .company-desc {
-      font-size: 12px;
-      color: #888;
-      font-style: italic;
-      margin-bottom: 6px;
-    }
-    .timeline-item ul {
-      padding-left: 18px;
-      font-size: 13.5px;
-    }
-    .timeline-item li {
-      margin-bottom: 4px;
-    }
-
-    /* ───── EDUCATION / CERT / INTERESTS (main col) ───── */
-    .compact-list {
-      list-style: none;
-      padding: 0;
-    }
-    .compact-list li {
-      font-size: 14px;
-      padding: 4px 0;
-      border-bottom: 1px solid #f0f2f4;
-    }
-    .compact-list li:last-child {
-      border-bottom: none;
-    }
-    .compact-list li strong {
-      color: #1a2332;
-    }
-    .interests-line {
-      font-size: 14px;
-      color: #444;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #e6e8eb;
-      margin: 10px 0;
-    }
-
-    /* ───── RESPONSIVE ───── */
-    @media (max-width: 768px) {
-      .cv {
-        grid-template-columns: 1fr;
-        border-radius: 8px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trinh Le - CV</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .sidebar .name { display: block; }
-      .main-header { display: none; }
-      .sidebar { padding: 28px 20px; }
-      .main { padding: 28px 20px; }
-    }
-
-    /* ───── PRINT ───── */
-    @media print {
       body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Arial,
+          sans-serif;
+        line-height: 1.6;
+        background: #eef1f5;
+        color: #2d2d2d;
+        padding: 40px 20px;
+      }
+      .cv {
+        max-width: 1050px;
+        margin: 0 auto;
         background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        overflow: hidden;
+      }
+
+      /* ───── SIDEBAR ───── */
+      .sidebar {
+        background: #1a2332;
+        color: #d3d9e2;
+        padding: 40px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .sidebar h2 {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #8896a8;
+        margin-bottom: 10px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #2d384a;
+      }
+      .sidebar ul {
+        list-style: none;
         padding: 0;
       }
-      .cv {
-        box-shadow: none;
-        border-radius: 0;
-        max-width: 100%;
+      .sidebar li {
+        font-size: 13px;
+        margin-bottom: 6px;
+        line-height: 1.5;
       }
-      .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    }
-  </style>
-</head>
-<body>
-  <div class="cv">
-    <!-- ─── SIDEBAR ─── -->
-    <div class="sidebar">
-      <div class="profile-short">
-        <div class="photo-placeholder">TL</div>
-        <h1>TRINH LE</h1>
-        <div class="role">Senior Solution Architect</div>
-      </div>
+      .sidebar li strong {
+        color: #fff;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        margin-bottom: 8px;
+        color: #c8ceda;
+      }
+      .contact-item a {
+        color: #8ab4f8;
+        text-decoration: none;
+      }
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+      .contact-icon {
+        width: 18px;
+        text-align: center;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+      .sidebar .name {
+        display: none;
+      }
+      .photo-placeholder {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #2d384a;
+        margin: 0 auto 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: #556477;
+        border: 3px solid #2c6faa;
+      }
+      .sidebar .profile-short {
+        text-align: center;
+      }
+      .sidebar .profile-short h1 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+      .sidebar .profile-short .role {
+        font-size: 14px;
+        color: #8ab4f8;
+        margin-top: 2px;
+      }
 
-      <div>
-        <h2>Contact</h2>
-        <div class="contact-item"><span class="contact-icon">📍</span> Wellington, New Zealand</div>
-        <div class="contact-item"><span class="contact-icon">📞</span> +64 22 4146855</div>
-        <div class="contact-item"><span class="contact-icon">✉️</span> lvdatri@gmail.com</div>
-        <div class="contact-item"><span class="contact-icon">🔗</span> <a href="https://linkedin.com/in/trinhle-b34b6334">linkedin.com/in/trinhle-b34b6334</a></div>
-      </div>
+      /* skill tags in sidebar */
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .skill-tags span {
+        background: #2d384a;
+        color: #c8ceda;
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 12px;
+      }
 
-      <div>
-        <h2>Core Expertise</h2>
-        <div class="skill-tags">
-          <span>Enterprise Architecture</span>
-          <span>Integration Architecture</span>
-          <span>API-Led Connectivity</span>
-          <span>Event-Driven Architecture</span>
-          <span>Microservices</span>
-          <span>Hybrid Cloud</span>
-          <span>AWS</span>
-          <span>Azure</span>
-          <span>GCP</span>
-          <span>Oracle Cloud</span>
-          <span>Azure Integration Services</span>
-          <span>Oracle Integration Cloud</span>
-          <span>Terraform</span>
-          <span>Bicep</span>
-          <span>CI/CD</span>
-          <span>AI & Automation</span>
-          <span>Domain-Driven Design</span>
-          <span>OWASP</span>
+      /* ───── MAIN ───── */
+      .main {
+        padding: 40px 40px 40px 36px;
+      }
+      .main-header {
+        display: none;
+      }
+      .section {
+        margin-bottom: 32px;
+      }
+      .section:last-child {
+        margin-bottom: 0;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #1a2332;
+        border-bottom: 3px solid #1a2332;
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+      }
+
+      /* Profile text */
+      .profile-text p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .profile-text ul {
+        padding-left: 18px;
+        font-size: 14px;
+      }
+      .profile-text li {
+        margin-bottom: 5px;
+      }
+
+      /* ───── TIMELINE EXPERIENCE ───── */
+      .timeline {
+        position: relative;
+        padding-left: 24px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        background: #d0d5dd;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 28px;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #2c6faa;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #2c6faa;
+      }
+      .timeline-item .date {
+        font-size: 12px;
+        font-weight: 600;
+        color: #2c6faa;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+      }
+      .timeline-item .role-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a2332;
+      }
+      .timeline-item .company {
+        font-size: 14px;
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 4px;
+      }
+      .timeline-item .company-desc {
+        font-size: 12px;
+        color: #888;
+        font-style: italic;
+        margin-bottom: 6px;
+      }
+      .timeline-item ul {
+        padding-left: 18px;
+        font-size: 13.5px;
+      }
+      .timeline-item li {
+        margin-bottom: 4px;
+      }
+
+      /* ───── EDUCATION / CERT / INTERESTS (main col) ───── */
+      .compact-list {
+        list-style: none;
+        padding: 0;
+      }
+      .compact-list li {
+        font-size: 14px;
+        padding: 4px 0;
+        border-bottom: 1px solid #f0f2f4;
+      }
+      .compact-list li:last-child {
+        border-bottom: none;
+      }
+      .compact-list li strong {
+        color: #1a2332;
+      }
+      .interests-line {
+        font-size: 14px;
+        color: #444;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #e6e8eb;
+        margin: 10px 0;
+      }
+
+      /* ───── RESPONSIVE ───── */
+      @media (max-width: 768px) {
+        .cv {
+          grid-template-columns: 1fr;
+          border-radius: 8px;
+        }
+        .sidebar .name {
+          display: block;
+        }
+        .main-header {
+          display: none;
+        }
+        .sidebar {
+          padding: 28px 20px;
+        }
+        .main {
+          padding: 28px 20px;
+        }
+      }
+
+      /* ───── PRINT ───── */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+        .cv {
+          box-shadow: none;
+          border-radius: 0;
+          max-width: 100%;
+        }
+        .sidebar {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv">
+      <!-- ─── SIDEBAR ─── -->
+      <div class="sidebar">
+        <div class="profile-short">
+          <div class="photo-placeholder">TL</div>
+          <h1>TRINH LE</h1>
+          <div class="role">Senior Solution Architect</div>
         </div>
-      </div>
 
-      <div>
-        <h2>Certifications</h2>
-        <ul>
-          <li>AWS Solutions Architect – 2020</li>
-          <li>Google Cloud ML & Big Data – 2019</li>
-          <li>Scrum Certified Product Owner – 2016</li>
-          <li>Cisco Certified Network Associate – 2008</li>
-          <li>Microsoft Certified System Engineer – 2008</li>
-          <li>EMC System Engineer – 2010</li>
-        </ul>
-      </div>
+        <div>
+          <h2>Contact</h2>
+          <div class="contact-item"><span class="contact-icon">📍</span> Wellington, New Zealand</div>
+          <div class="contact-item"><span class="contact-icon">📞</span> +64 22 4146855</div>
+          <div class="contact-item"><span class="contact-icon">✉️</span> lvdatri@gmail.com</div>
+          <div class="contact-item">
+            <span class="contact-icon">🔗</span>
+            <a href="https://linkedin.com/in/trinhle-b34b6334">linkedin.com/in/trinhle-b34b6334</a>
+          </div>
+        </div>
 
-      <div>
-        <h2>Interests</h2>
-        <ul>
-          <li>Travel • Photography • Gaming</li>
-          <li>Badminton • Road Trips • Biking</li>
-        </ul>
-      </div>
-    </div>
+        <div>
+          <h2>Core Expertise</h2>
+          <div class="skill-tags">
+            <span>Enterprise Architecture</span>
+            <span>Integration Architecture</span>
+            <span>API-Led Connectivity</span>
+            <span>Event-Driven Architecture</span>
+            <span>Microservices</span>
+            <span>Hybrid Cloud</span>
+            <span>AWS</span>
+            <span>Azure</span>
+            <span>GCP</span>
+            <span>Oracle Cloud</span>
+            <span>Azure Integration Services</span>
+            <span>Oracle Integration Cloud</span>
+            <span>Terraform</span>
+            <span>Bicep</span>
+            <span>CI/CD</span>
+            <span>AI & Automation</span>
+            <span>Domain-Driven Design</span>
+            <span>OWASP</span>
+          </div>
+        </div>
 
-    <!-- ─── MAIN ─── -->
-    <div class="main">
-      <!-- Executive Profile -->
-      <div class="section">
-        <div class="section-title">Executive Profile</div>
-        <div class="profile-text">
-          <p>
-            Senior Solution Architect specialising in
-            <strong>enterprise integration, API ecosystems, and hybrid cloud platforms</strong>,
-            with a strong track record delivering large-scale transformation programs.
-          </p>
+        <div>
+          <h2>Certifications</h2>
           <ul>
-            <li>Expert in <strong>AWS, Azure, and Oracle Cloud</strong></li>
-            <li>Specialised in <strong>API-first, event-driven, and hybrid cloud architectures</strong></li>
-            <li>Strong track record modernising legacy systems into scalable integration platforms</li>
-            <li>Experienced in <strong>AI-enabled automation and intelligent workflows</strong></li>
-            <li>Proven in coaching and mentoring engineers to build high-performing, self-sufficient teams</li>
-            <li>Strong ability to align architecture with business strategy, operational outcomes, and customer experience</li>
+            <li>AWS Solutions Architect – 2020</li>
+            <li>Google Cloud ML & Big Data – 2019</li>
+            <li>Scrum Certified Product Owner – 2016</li>
+            <li>Cisco Certified Network Associate – 2008</li>
+            <li>Microsoft Certified System Engineer – 2008</li>
+            <li>EMC System Engineer – 2010</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Interests</h2>
+          <ul>
+            <li>Travel • Photography • Gaming</li>
+            <li>Badminton • Road Trips • Biking</li>
           </ul>
         </div>
       </div>
 
-      <!-- Professional Experience (Timeline) -->
-      <div class="section">
-        <div class="section-title">Professional Experience</div>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="date">2024 – Present</div>
-            <div class="role-title">Solution Architect – Integration</div>
-            <div class="company">Kāinga Ora</div>
-            <div class="company-desc">New Zealand's largest public housing provider</div>
+      <!-- ─── MAIN ─── -->
+      <div class="main">
+        <!-- Executive Profile -->
+        <div class="section">
+          <div class="section-title">Executive Profile</div>
+          <div class="profile-text">
+            <p>
+              Senior Solution Architect specialising in
+              <strong>enterprise integration, API ecosystems, and hybrid cloud platforms</strong>, with a strong track
+              record delivering large-scale transformation programs.
+            </p>
             <ul>
-              <li>Architected enterprise integration platform (<strong>Azure Integration Services + Oracle Integration Cloud</strong>) improving system interoperability across multiple core systems</li>
-              <li>Defined <strong>API orchestration and hybrid cloud architecture patterns</strong> aligned to business capabilities</li>
-              <li>Introduced <strong>AI-driven automation and workflow orchestration</strong></li>
-              <li>Established integration governance, standards, and security frameworks</li>
-              <li>Contributed to integration architecture for <strong>$100M+ transformation programs</strong></li>
-              <li>Partnered with business stakeholders to translate service delivery needs into scalable solutions</li>
-              <li>Uplifted team capability to enable full in-house ownership of the integration platform</li>
+              <li>Expert in <strong>AWS, Azure, and Oracle Cloud</strong></li>
+              <li>Specialised in <strong>API-first, event-driven, and hybrid cloud architectures</strong></li>
+              <li>Strong track record modernising legacy systems into scalable integration platforms</li>
+              <li>Experienced in <strong>AI-enabled automation and intelligent workflows</strong></li>
+              <li>Proven in coaching and mentoring engineers to build high-performing, self-sufficient teams</li>
+              <li>
+                Strong ability to align architecture with business strategy, operational outcomes, and customer
+                experience
+              </li>
             </ul>
           </div>
-
-          <div class="timeline-item">
-            <div class="date">2021 – 2024</div>
-            <div class="role-title">Solution Architect</div>
-            <div class="company">Kāinga Ora</div>
-            <ul>
-              <li>Delivered critical platform upgrades (<strong>Actifio, NEC Public housing management software</strong>)</li>
-              <li><strong>Led end-to-end solution architecture and migration</strong> from Genesys Engage to Genesys Cloud (500+ agents)</li>
-              <li>Designed <strong>cross-cloud integrations (Azure, Oracle, Salesforce, ServiceNow, Genesys, NEC)</strong></li>
-              <li>Delivered end-to-end integration architecture for Project Greys Avenue (Te Mātāwai), enabling a 24/7 housing service model</li>
-              <li>Provided technical leadership and mentoring across delivery teams</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="date">2018 – 2021</div>
-            <div class="role-title">Digital Solution Architect</div>
-            <div class="company">Health Promotion Agency</div>
-            <div class="company-desc">New Zealand government agency delivering nationwide public health campaigns</div>
-            <ul>
-              <li>Delivered <strong>AWS cloud migration and AI chatbot platforms (NLP/ML)</strong></li>
-              <li>Enabled nationwide digital services improving mental health access and user engagement</li>
-              <li>🏆 Awarded Data Hackathon Aotearoa 2020</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="date">2014 – 2018</div>
-            <div class="role-title">Digital Production Director → Technical Director</div>
-            <div class="company">Ogilvy Vietnam</div>
-            <ul>
-              <li>Owned end-to-end solution architecture for enterprise e-commerce platforms and SAP integrations supporting Nestlé Australia's flagship brands (Milo, Nescafé, KitKat)</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="date">Earlier</div>
-            <div class="role-title">Partnership Manager</div>
-            <div class="company">Pyramid Consulting</div>
-            <ul>
-              <li>Delivered scalable eCommerce platforms for global brands such as Berluti and Fred</li>
-            </ul>
-          </div>
-
         </div>
-      </div>
 
-      <!-- Education -->
-      <div class="section">
-        <div class="section-title">Education</div>
-        <ul class="compact-list">
-          <li><strong>Master's Degree in Information Technology</strong> – Monash University (2010)</li>
-          <li><strong>Bachelor's Degree in Computer Science</strong> – Hue University (2006)</li>
-        </ul>
-      </div>
+        <!-- Professional Experience (Timeline) -->
+        <div class="section">
+          <div class="section-title">Professional Experience</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="date">2024 – Present</div>
+              <div class="role-title">Solution Architect – Integration</div>
+              <div class="company">Kāinga Ora</div>
+              <div class="company-desc">New Zealand's largest public housing provider</div>
+              <ul>
+                <li>
+                  Architected enterprise integration platform (<strong
+                    >Azure Integration Services + Oracle Integration Cloud</strong
+                  >) improving system interoperability across multiple core systems
+                </li>
+                <li>
+                  Defined <strong>API orchestration and hybrid cloud architecture patterns</strong> aligned to business
+                  capabilities
+                </li>
+                <li>Introduced <strong>AI-driven automation and workflow orchestration</strong></li>
+                <li>Established integration governance, standards, and security frameworks</li>
+                <li>Contributed to integration architecture for <strong>$100M+ transformation programs</strong></li>
+                <li>
+                  Partnered with business stakeholders to translate service delivery needs into scalable solutions
+                </li>
+                <li>Uplifted team capability to enable full in-house ownership of the integration platform</li>
+              </ul>
+            </div>
 
-      <hr />
-      <p style="font-size:12px;color:#999;"><em>Last Updated: June 2026</em></p>
+            <div class="timeline-item">
+              <div class="date">2021 – 2024</div>
+              <div class="role-title">Solution Architect</div>
+              <div class="company">Kāinga Ora</div>
+              <ul>
+                <li>
+                  Delivered critical platform upgrades (<strong>Actifio, NEC Public housing management software</strong
+                  >)
+                </li>
+                <li>
+                  <strong>Led end-to-end solution architecture and migration</strong> from Genesys Engage to Genesys
+                  Cloud (500+ agents)
+                </li>
+                <li>
+                  Designed
+                  <strong>cross-cloud integrations (Azure, Oracle, Salesforce, ServiceNow, Genesys, NEC)</strong>
+                </li>
+                <li>
+                  Delivered end-to-end integration architecture for Project Greys Avenue (Te Mātāwai), enabling a 24/7
+                  housing service model
+                </li>
+                <li>Provided technical leadership and mentoring across delivery teams</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="date">2018 – 2021</div>
+              <div class="role-title">Digital Solution Architect</div>
+              <div class="company">Health Promotion Agency</div>
+              <div class="company-desc">
+                New Zealand government agency delivering nationwide public health campaigns
+              </div>
+              <ul>
+                <li>Delivered <strong>AWS cloud migration and AI chatbot platforms (NLP/ML)</strong></li>
+                <li>Enabled nationwide digital services improving mental health access and user engagement</li>
+                <li>🏆 Awarded Data Hackathon Aotearoa 2020</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="date">2014 – 2018</div>
+              <div class="role-title">Senior Technical Project Manager → Technical Director</div>
+              <div class="company">Ogilvy Vietnam</div>
+              <ul>
+                <li>
+                  Owned end-to-end solution architecture for enterprise e-commerce platforms and SAP integrations
+                  supporting Nestlé Global and Australia's flagship brands (Milo, Nescafé, KitKat)
+                </li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="date">Earlier Career</div>
+              <div class="role-title">Partnership Manager / Java Developer / System Administrator</div>
+              <div class="company">CBTW global &amp; Prior</div>
+              <ul>
+                <li>
+                  Delivered scalable eCommerce platforms for global brands (Berluti, Fred), building client engagement
+                  and solution-delivery discipline
+                </li>
+                <li>
+                  Built and maintained enterprise Java applications, establishing strong software engineering
+                  fundamentals
+                </li>
+                <li>
+                  Administered systems, networks, and infrastructure, grounding architectural decisions in operational
+                  reality
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+          <div class="section-title">Education</div>
+          <ul class="compact-list">
+            <li><strong>Master's Degree in Information Technology</strong> – Monash University (2010)</li>
+            <li><strong>Bachelor's Degree in Computer Science</strong> – Hue University (2006)</li>
+          </ul>
+        </div>
+
+        <hr />
+        <p style="font-size: 12px; color: #999"><em>Last Updated: June 2026</em></p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

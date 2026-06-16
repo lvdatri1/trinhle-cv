@@ -1,0 +1,8 @@
+node_modules/
+*.plantuml
+*.csv
+*.py
+*.json
+*.md
+TrinhLe-cv-html.html
+onepage_tmp.html
