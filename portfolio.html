@@ -9,135 +9,122 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:#07090f; color:#e8edf5; line-height:1.6;
+      background:#f4f6fb; color:#1e2433; line-height:1.6;
     }
     ::-webkit-scrollbar { width:8px; }
-    ::-webkit-scrollbar-track { background:#0e121f; }
-    ::-webkit-scrollbar-thumb { background:#2a3456; border-radius:4px; }
+    ::-webkit-scrollbar-track { background:#eef1f5; }
+    ::-webkit-scrollbar-thumb { background:#c8ced8; border-radius:4px; }
 
     .container { max-width:1140px; margin:0 auto; padding:0 24px; }
 
     /* ── Nav ── */
     nav {
       position:sticky; top:0; z-index:100;
-      background:rgba(7,9,15,.85); backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(255,255,255,.06); padding:16px 0;
+      background:rgba(255,255,255,.85); backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(0,0,0,.06); padding:16px 0;
     }
     nav .container { display:flex; align-items:center; justify-content:space-between; }
-    nav .logo { font-weight:800; font-size:20px; letter-spacing:1.5px; background:linear-gradient(135deg,#00d4ff,#7b2ff7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    nav a { color:#7a88a8; text-decoration:none; font-size:13px; font-weight:500; margin-left:28px; transition:color .2s; }
-    nav a:hover { color:#00d4ff; }
+    nav .logo {
+      font-weight:800; font-size:20px; letter-spacing:1.5px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    nav a { color:#5a6a8a; text-decoration:none; font-size:13px; font-weight:500; margin-left:28px; transition:color .2s; }
+    nav a:hover { color:#2563eb; }
 
     /* ── Hero ── */
     .hero {
-      position:relative; padding:96px 0 80px; text-align:center; overflow:hidden;
-      background:radial-gradient(ellipse 80% 60% at 50% -20%,#1a1060 0%,transparent 70%),
-                 radial-gradient(ellipse 60% 50% at 80% 80%,#0d2a5e 0%,transparent 60%),
-                 #07090f;
-    }
-    .hero::before {
-      content:""; position:absolute; inset:0;
-      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events:none;
+      position:relative; padding:88px 0 72px; text-align:center; overflow:hidden;
+      background:linear-gradient(180deg,#f0f4ff 0%,#fff 100%);
     }
     .hero h1 {
-      font-size:52px; font-weight:800; letter-spacing:-1px; line-height:1.1;
-      background:linear-gradient(135deg,#fff 40%,#7b8cff 70%,#00d4ff);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      font-size:52px; font-weight:800; letter-spacing:-1px; line-height:1.1; color:#0f172a;
     }
-    .hero .sub { font-size:17px; color:#8899bb; margin-top:14px; max-width:640px; margin-left:auto; margin-right:auto; }
+    .hero h1 span {
+      background:linear-gradient(135deg,#2563eb,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .hero .sub { font-size:17px; color:#5a6a8a; margin-top:14px; max-width:640px; margin-left:auto; margin-right:auto; }
     .hero .stats { display:flex; justify-content:center; gap:40px; margin-top:44px; flex-wrap:wrap; }
     .hero .stat { text-align:center; }
-    .hero .stat .num { font-size:38px; font-weight:800; background:linear-gradient(135deg,#00d4ff,#7b2ff7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .hero .stat .label { font-size:12px; color:#6a7fa0; text-transform:uppercase; letter-spacing:1.5px; margin-top:1px; }
+    .hero .stat .num { font-size:38px; font-weight:800; background:linear-gradient(135deg,#2563eb,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero .stat .label { font-size:12px; color:#7a8aaa; text-transform:uppercase; letter-spacing:1.5px; margin-top:1px; font-weight:600; }
 
     /* ── Tech Cloud ── */
     .tech-cloud {
       display:flex; flex-wrap:wrap; justify-content:center; gap:36px; margin-top:48px;
-      padding:28px 32px; border-radius:16px;
-      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+      padding:28px 36px; border-radius:16px;
+      background:#fff; border:1px solid #e8ecf2; box-shadow:0 2px 8px rgba(0,0,0,.04);
     }
-    .tech-cloud img { height:30px; opacity:.55; filter:grayscale(1) brightness(1.4); transition:all .3s; }
-    .tech-cloud img:hover { opacity:1; filter:grayscale(0) brightness(1); transform:scale(1.1); }
+    .tech-cloud img { height:28px; opacity:.5; filter:grayscale(1); transition:all .3s; }
+    .tech-cloud img:hover { opacity:1; filter:grayscale(0); transform:scale(1.1); }
 
     /* ── Section ── */
     .section { padding:64px 0; }
-    .section-title {
-      font-size:30px; font-weight:700; margin-bottom:6px;
-      background:linear-gradient(135deg,#fff,#8899cc); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    }
+    .section-title { font-size:30px; font-weight:700; color:#0f172a; margin-bottom:6px; }
     .section-title small {
-      display:block; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:2.5px;
-      background:linear-gradient(135deg,#00d4ff,#7b2ff7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
       margin-bottom:4px;
     }
-    .section-desc { font-size:15px; color:#6a7fa0; max-width:680px; margin-bottom:36px; }
+    .section-desc { font-size:15px; color:#6a7a9a; max-width:680px; margin-bottom:36px; }
 
     /* ── Cards ── */
     .achievements { display:grid; gap:24px; }
     .card {
-      background:linear-gradient(135deg,rgba(20,28,52,.6),rgba(12,16,28,.6));
-      border:1px solid rgba(255,255,255,.07); border-radius:20px;
+      background:#fff; border:1px solid #e8ecf2; border-radius:20px;
       padding:40px 44px; position:relative; overflow:hidden;
       transition:border-color .3s, transform .3s, box-shadow .3s;
-      backdrop-filter:blur(8px);
+      box-shadow:0 2px 12px rgba(0,0,0,.04);
     }
-    .card:hover { border-color:rgba(0,212,255,.25); transform:translateY(-2px); box-shadow:0 12px 48px rgba(0,212,255,.06); }
-    .card::before {
-      content:""; position:absolute; top:0; right:0; width:280px; height:280px;
-      background:radial-gradient(circle,rgba(123,47,247,.08),transparent 70%);
-      pointer-events:none;
-    }
+    .card:hover { border-color:#2563eb40; transform:translateY(-2px); box-shadow:0 12px 40px rgba(37,99,235,.08); }
     .card .tag {
       font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-      color:#00d4ff; margin-bottom:8px; display:block;
+      color:#2563eb; margin-bottom:8px; display:block;
     }
-    .card h3 { font-size:22px; font-weight:700; color:#fff; margin-bottom:10px; line-height:1.3; }
-    .card p { font-size:14px; color:#8899bb; line-height:1.8; }
-    .card p a { color:#00d4ff; }
+    .card h3 { font-size:22px; font-weight:700; color:#0f172a; margin-bottom:10px; line-height:1.3; }
+    .card p { font-size:14px; color:#4a5a7a; line-height:1.8; }
+    .card p strong { color:#0f172a; }
+    .card p a { color:#2563eb; }
     .card .metrics { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
     .card .metric {
       font-size:12px; font-weight:600; padding:4px 14px; border-radius:20px;
-      border:1px solid rgba(0,212,255,.2); color:#8ac4ff; background:rgba(0,212,255,.06);
+      border:1px solid #dce2ee; color:#4a5a7a; background:#f8fafd;
     }
     .card .metric.highlight {
-      border-color:rgba(123,47,247,.35); color:#c8a8ff; background:rgba(123,47,247,.1);
-    }
-    .card .metric.glow {
-      border-color:rgba(255,107,53,.3); color:#ffb08a; background:rgba(255,107,53,.08);
+      border-color:#7c3aed40; color:#6d28d9; background:#f5f3ff;
     }
 
     .card .logo-strip {
       display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin-top:16px; padding-top:16px;
-      border-top:1px solid rgba(255,255,255,.05);
+      border-top:1px solid #eef2f6;
     }
-    .card .logo-strip img { height:22px; opacity:.5; filter:grayscale(1) brightness(1.5); transition:all .3s; }
-    .card .logo-strip img:hover { opacity:1; filter:grayscale(0) brightness(1); }
+    .card .logo-strip img { height:22px; opacity:.45; filter:grayscale(1); transition:all .3s; }
+    .card .logo-strip img:hover { opacity:1; filter:grayscale(0); }
+    .card .logo-strip span { font-size:12px; color:#7a8aaa; }
 
     .card-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
 
     .geo-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
     .geo-grid span {
-      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); color:#7a88a8;
+      background:#f8fafd; border:1px solid #e8ecf2; color:#4a5a7a;
       font-size:12px; font-weight:500; padding:5px 14px; border-radius:16px;
     }
 
     /* ── Philosophy ── */
     .phil-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
     .phil-card {
-      background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);
-      border-radius:16px; padding:32px 36px; text-align:center;
+      background:#fff; border:1px solid #e8ecf2; border-radius:16px; padding:32px 36px; text-align:center;
+      box-shadow:0 2px 8px rgba(0,0,0,.04);
     }
     .phil-card .icon { font-size:32px; margin-bottom:12px; }
-    .phil-card h4 { font-size:16px; font-weight:700; color:#fff; margin-bottom:6px; }
-    .phil-card p { font-size:13px; color:#6a7fa0; }
+    .phil-card h4 { font-size:16px; font-weight:700; color:#0f172a; margin-bottom:6px; }
+    .phil-card p { font-size:13px; color:#5a6a8a; }
 
     /* ── Footer ── */
     footer {
-      border-top:1px solid rgba(255,255,255,.05); padding:32px 24px; text-align:center;
-      color:#4a5a7a; font-size:13px;
+      border-top:1px solid #e8ecf2; padding:32px 24px; text-align:center;
+      color:#7a8aaa; font-size:13px;
     }
-    footer a { color:#00d4ff; text-decoration:none; }
+    footer a { color:#2563eb; text-decoration:none; }
     footer a:hover { text-decoration:underline; }
 
     @media (max-width:768px) {
@@ -168,7 +155,7 @@
 
 <section class="hero">
   <div class="container">
-    <h1>Architect. Deliver.<br>Scale.</h1>
+    <h1>Architect. Deliver.<br><span>Scale.</span></h1>
     <p class="sub">Enterprise Solution Architect — I turn complex transformation programs into delivered outcomes, from housing and contact centres to global consumer brands.</p>
     <div class="stats">
       <div class="stat"><div class="num">$100M+</div><div class="label">Transformation Programs</div></div>
@@ -183,9 +170,9 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" alt="Terraform" title="Terraform">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Azure_DevOps_icon.svg" alt="Azure DevOps" title="Azure DevOps">
       <img src="https://cdn.brandfetch.io/idOcCcWwRa/w/820/h/151/theme/dark/logo.png" alt="Genesys" title="Genesys">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" alt="ServiceNow" title="ServiceNow">
       <img src="https://cdn.brandfetch.io/idxH5IeWYH/w/820/h/215/theme/light/logo.png" alt="Botpress" title="Botpress">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Oracle_logo.svg" alt="Oracle" title="Oracle">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Salesforce_logo.svg" alt="Salesforce" title="Salesforce">
     </div>
   </div>
 </section>
@@ -201,7 +188,7 @@
       <div class="card">
         <span class="tag">Enterprise Integration Architecture</span>
         <h3>Greys Avenue (Te Mātāwai) — 24/7 Housing Service Model</h3>
-        <p>Kāinga Ora's flagship project to deliver a new 177-home housing development with an integrated 24/7 service model. The program required <strong style="color:#fff;">3 Solution Architect resources</strong> — I carried the solution architecture <strong style="color:#fff;">end-to-end as a single architect</strong>, covering integration architecture, cross-cloud orchestration, and platform design across <strong style="color:#fff;">10 digital projects</strong> under the same program. I also supported <strong style="color:#fff;">5 Business Analysts</strong> simultaneously across the full project portfolio, enabling requirements elucidation, solution design, and delivery sequencing.</p>
+        <p>Kāinga Ora's flagship project to deliver a new 177-home housing development with an integrated 24/7 service model. The program required <strong>3 Solution Architect resources</strong> — I carried the solution architecture <strong>end-to-end as a single architect</strong>, covering integration architecture, cross-cloud orchestration, and platform design across <strong>10 digital projects</strong> under the same program. I also supported <strong>5 Business Analysts</strong> simultaneously across the full project portfolio, enabling requirements elucidation, solution design, and delivery sequencing.</p>
         <div class="metrics">
           <span class="metric">Solo architect on a 3-person workload</span>
           <span class="metric highlight">10 digital projects · 5 BAs supported</span>
@@ -209,8 +196,8 @@
         <div class="logo-strip">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Oracle_logo.svg" alt="Oracle">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Salesforce_logo.svg" alt="Salesforce">
-          <span style="color:#4a5a7a;font-size:11px;">ServiceNow · NEC</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" alt="ServiceNow">
+          <span>NEC</span>
         </div>
       </div>
 
@@ -218,7 +205,7 @@
       <div class="card">
         <span class="tag">Cloud Migration & Contact Centre</span>
         <h3>Genesys Engage → Genesys Cloud Migration</h3>
-        <p>Led the <strong style="color:#fff;">end-to-end solution architecture and migration</strong> from on-premise Genesys Engage to Genesys Cloud for <strong style="color:#fff;">500+ agents</strong>. This complex program spanned the full lifecycle: requirements gathering, vendor RFP, solution design, implementation, and cutover — all delivered in <strong style="color:#fff;">under 6 months</strong>. The migration enabled a modern, scalable contact centre platform with cross-cloud integrations spanning Azure, Oracle, Salesforce, ServiceNow, and NEC.</p>
+        <p>Led the <strong>end-to-end solution architecture and migration</strong> from on-premise Genesys Engage to Genesys Cloud for <strong>500+ agents</strong>. This complex program spanned the full lifecycle: requirements gathering, vendor RFP, solution design, implementation, and cutover — all delivered in <strong>under 6 months</strong>. The migration enabled a modern, scalable contact centre platform with cross-cloud integrations spanning Azure, Oracle, ServiceNow, Salesforce, and NEC.</p>
         <div class="metrics">
           <span class="metric highlight">Delivered in &lt;6 months · 500+ agents</span>
         </div>
@@ -226,7 +213,7 @@
           <img src="https://cdn.brandfetch.io/idOcCcWwRa/w/820/h/151/theme/dark/logo.png" alt="Genesys">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Oracle_logo.svg" alt="Oracle">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Salesforce_logo.svg" alt="Salesforce">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" alt="ServiceNow">
         </div>
       </div>
 
@@ -234,7 +221,7 @@
       <div class="card">
         <span class="tag">Product R&D to Global Rollout</span>
         <h3>Milo Champions Band & Mobile App</h3>
-        <p>Led the <strong style="color:#fff;">full lifecycle from R&D to global delivery</strong> of the Milo Champions Band — a wearable + mobile app ecosystem for Nestlé's flagship brand. Starting as a research and development concept, I drove the architecture, vendor selection, and integration design that took the product to market across <strong style="color:#fff;">10+ countries</strong>. The band launched across Vietnam, Mexico, Brazil, Australia, and all Southeast Asian markets, selling <strong style="color:#fff;">100,000+ units in Australia alone</strong> and significant volumes across other regions. The program involved SAP e-commerce integrations and real-time data pipelines.</p>
+        <p>Led the <strong>full lifecycle from R&D to global delivery</strong> of the Milo Champions Band — a wearable + mobile app ecosystem for Nestlé's flagship brand. Starting as a research and development concept, I drove the architecture, vendor selection, and integration design that took the product to market across <strong>10+ countries</strong>. The band launched across Vietnam, Mexico, Brazil, Australia, and all Southeast Asian markets, selling <strong>100,000+ units in Australia alone</strong> and significant volumes across other regions. The program involved SAP e-commerce integrations and real-time data pipelines.</p>
         <div class="metrics">
           <span class="metric">100,000+ units sold in Australia</span>
           <span class="metric highlight">10+ countries · R&D to delivery</span>
@@ -257,7 +244,7 @@
       <div class="card">
         <span class="tag">Customer Identity & Access Management</span>
         <h3>Gigya CIAM — Nestlé Global GDPR Compliance</h3>
-        <p>Delivered the <strong style="color:#fff;">Gigya Customer Identity & Access Management (CIAM)</strong> project for Nestlé Global, rolling out a unified identity platform across flagship brands including <strong style="color:#fff;">Milo, S26, NAN, and Maggi</strong>. The solution was deployed across <strong style="color:#fff;">Australia, New Zealand, Vietnam</strong> and other markets to ensure <strong style="color:#fff;">GDPR compliance</strong> ahead of the 2018 enforcement deadline. The implementation enabled centralised customer profile management, consent governance, and single sign-on across Nestlé's digital brand ecosystem while meeting strict European data privacy requirements.</p>
+        <p>Delivered the <strong>Gigya Customer Identity & Access Management (CIAM)</strong> project for Nestlé Global, rolling out a unified identity platform across flagship brands including <strong>Milo, S26, NAN, and Maggi</strong>. The solution was deployed across <strong>Australia, New Zealand, Vietnam</strong> and other markets to ensure <strong>GDPR compliance</strong> ahead of the 2018 enforcement deadline. The implementation enabled centralised customer profile management, consent governance, and single sign-on across Nestlé's digital brand ecosystem while meeting strict European data privacy requirements.</p>
         <div class="metrics">
           <span class="metric">Brands: Milo · S26 · NAN · Maggi</span>
           <span class="metric highlight">GDPR compliance · Multi-market rollout · 2017</span>
@@ -273,7 +260,7 @@
       <div class="card">
         <span class="tag">Cloud Migration & Digital Health</span>
         <h3>AWS Cloud Migration & Mental Health Digital Services</h3>
-        <p>Led the migration of Health Promotion Agency's <strong style="color:#fff;">traditional on-premise web infrastructure to AWS cloud</strong>, introducing modern CI/CD pipelines that transformed how websites were managed and deployed. This included <strong style="color:#fff;">depression.org.nz</strong> — one of New Zealand's highest-traffic websites — ensuring scalability, reliability, and rapid iteration capability. I also led the <strong style="color:#fff;">digital transformation of the traditional mental health test and booking process</strong>, delivering <strong style="color:#fff;">smallsteps.co.nz</strong> which enabled patients to complete assessments online and book psychologist appointments digitally — removing friction from a previously manual, paper-based pathway.</p>
+        <p>Led the migration of Health Promotion Agency's <strong>traditional on-premise web infrastructure to AWS cloud</strong>, introducing modern CI/CD pipelines that transformed how websites were managed and deployed. This included <strong>depression.org.nz</strong> — one of New Zealand's highest-traffic websites — ensuring scalability, reliability, and rapid iteration capability. I also led the <strong>digital transformation of the traditional mental health test and booking process</strong>, delivering <strong>smallsteps.co.nz</strong> which enabled patients to complete assessments online and book psychologist appointments digitally — removing friction from a previously manual, paper-based pathway.</p>
         <div class="metrics">
           <span class="metric highlight">depression.org.nz · smallsteps.co.nz</span>
           <span class="metric">AWS · CI/CD · Digital Mental Health</span>
@@ -287,7 +274,7 @@
       <div class="card">
         <span class="tag">AI Chatbot & Public Health</span>
         <h3>Kuini — AI Chatbot Helping Māori Women Quit Smoking</h3>
-        <p>Led the <strong style="color:#fff;">architecture development of an AI-powered chatbot</strong> using <strong style="color:#fff;">Botpress</strong> to help Māori women quit smoking. The chatbot, named <strong style="color:#fff;">Kuini</strong> (Māori for "Queen"), was designed with culturally responsive conversational flows co-designed with Māori health practitioners, delivering personalised quit-smoking support through a natural-language interface. I architected the NLU pipeline, conversation orchestration, and integration with HPA's digital health ecosystem. The project demonstrated how conversational AI could be applied to <strong style="color:#fff;">indigenous public health</strong> — meeting users where they are with culturally appropriate digital tools. <a href="https://htrhn.org.nz/innovation/kuini/" target="_blank">htrhn.org.nz/innovation/kuini</a></p>
+        <p>Led the <strong>architecture development of an AI-powered chatbot</strong> using <strong>Botpress</strong> to help Māori women quit smoking. The chatbot, named <strong>Kuini</strong> (Māori for "Queen"), was designed with culturally responsive conversational flows co-designed with Māori health practitioners, delivering personalised quit-smoking support through a natural-language interface. I architected the NLU pipeline, conversation orchestration, and integration with HPA's digital health ecosystem. The project demonstrated how conversational AI could be applied to <strong>indigenous public health</strong> — meeting users where they are with culturally appropriate digital tools. <a href="https://htrhn.org.nz/innovation/kuini/" target="_blank">htrhn.org.nz/innovation/kuini</a></p>
         <div class="metrics">
           <span class="metric highlight">Botpress · NLP/ML · Cultural Responsiveness</span>
         </div>
@@ -300,7 +287,7 @@
       <div class="card">
         <span class="tag">Digital Inclusion & Public Health</span>
         <h3>Zero-Rated Data — Government Health Websites</h3>
-        <p>Led the <strong style="color:#fff;">technical architecture of a zero-rated data joint project</strong> between the <strong style="color:#fff;">Ministry of Health, health agencies, and all New Zealand telcos</strong> (Spark, Vodafone, 2degrees). The initiative enabled New Zealanders to access government health websites <strong style="color:#fff;">without consuming mobile data</strong>, removing cost barriers to critical health information. I architected the framework for telco-side whitelisting, traffic classification, and reporting — a model designed to be <strong style="color:#fff;">scalable across other government services</strong>. The framework was subsequently adopted as a blueprint for broader government zero-rating initiatives. <a href="https://www.govt.nz/browse/engaging-with-government/no-data-access-government-websites/" target="_blank">govt.nz/no-data-access</a></p>
+        <p>Led the <strong>technical architecture of a zero-rated data joint project</strong> between the <strong>Ministry of Health, health agencies, and all New Zealand telcos</strong> (Spark, Vodafone, 2degrees). The initiative enabled New Zealanders to access government health websites <strong>without consuming mobile data</strong>, removing cost barriers to critical health information. I architected the framework for telco-side whitelisting, traffic classification, and reporting — a model designed to be <strong>scalable across other government services</strong>. The framework was subsequently adopted as a blueprint for broader government zero-rating initiatives. <a href="https://www.govt.nz/browse/engaging-with-government/no-data-access-government-websites/" target="_blank">govt.nz/no-data-access</a></p>
         <div class="metrics">
           <span class="metric highlight">Ministry of Health · All NZ Telcos · Scalable Framework</span>
         </div>
@@ -310,7 +297,7 @@
       <div class="card">
         <span class="tag">Legacy Platform Upgrade</span>
         <h3>Kotahi — Minimal SA Footprint, On Time & Under Budget</h3>
-        <p>Kāinga Ora's legacy tenancy management software (Kotahi) required a critical platform upgrade. The program was staffed with dedicated Solution Architect resources — I reduced my involvement to <strong style="color:#fff;">less than 10% of a full-time SA allocation</strong> by enabling the delivery team with clear architectural guardrails, self-service patterns, and pre-authorised design decisions. The upgrade was delivered <strong style="color:#fff;">on time and under budget</strong>, proving that lean architecture can drive efficient outcomes without compromising quality.</p>
+        <p>Kāinga Ora's legacy tenancy management software (Kotahi) required a critical platform upgrade. The program was staffed with dedicated Solution Architect resources — I reduced my involvement to <strong>less than 10% of a full-time SA allocation</strong> by enabling the delivery team with clear architectural guardrails, self-service patterns, and pre-authorised design decisions. The upgrade was delivered <strong>on time and under budget</strong>, proving that lean architecture can drive efficient outcomes without compromising quality.</p>
         <div class="metrics">
           <span class="metric highlight">&lt;10% SA allocation · On time · Under budget</span>
         </div>
@@ -320,7 +307,7 @@
       <div class="card">
         <span class="tag">Capability Building & Platform Ownership</span>
         <h3>Building an In-House Integration Platform Team</h3>
-        <p>I led the uplift of Kāinga Ora's integration team from reliant on external vendors to <strong style="color:#fff;">full in-house ownership</strong> of a complex Enterprise Integration Platform spanning <strong style="color:#fff;">Azure Integration Services (Logic Apps, API Management, Service Bus, Event Grid)</strong> and <strong style="color:#fff;">Oracle Integration Cloud (OIC)</strong>. The platform required intricate Infrastructure-as-Code configuration across <strong style="color:#fff;">Terraform, Bicep, and Azure DevOps CI/CD pipelines</strong>. Through pair-architecting, code reviews, and knowledge transfer, the team now independently manages, extends, and governs the entire integration estate — a capability that previously required ongoing external consultant support.</p>
+        <p>I led the uplift of Kāinga Ora's integration team from reliant on external vendors to <strong>full in-house ownership</strong> of a complex Enterprise Integration Platform spanning <strong>Azure Integration Services (Logic Apps, API Management, Service Bus, Event Grid)</strong> and <strong>Oracle Integration Cloud (OIC)</strong>. The platform required intricate Infrastructure-as-Code configuration across <strong>Terraform, Bicep, and Azure DevOps CI/CD pipelines</strong>. Through pair-architecting, code reviews, and knowledge transfer, the team now independently manages, extends, and governs the entire integration estate — a capability that previously required ongoing external consultant support.</p>
         <div class="metrics">
           <span class="metric">Azure Integration Services + Oracle Integration Cloud</span>
           <span class="metric highlight">Terraform · Bicep · Azure DevOps CI/CD</span>
@@ -337,7 +324,7 @@
       <div class="card">
         <span class="tag">Recovery & Migration</span>
         <h3>Actifio Upgrade — Diagnosed & Rescued a Failing Program</h3>
-        <p>The Release team was struggling with a failing Actifio upgrade program that threatened production backup and recovery operations. I stepped in to <strong style="color:#fff;">identify the root cause of critical technical issues</strong> that had stalled the upgrade, working closely with the team to remediate configuration problems, resolve platform incompatibilities, and chart a path forward. The intervention enabled the team to <strong style="color:#fff;">successfully migrate to a new Actifio platform</strong>, modernising their environment management and ensuring continuity of backup operations across Kāinga Ora's infrastructure.</p>
+        <p>The Release team was struggling with a failing Actifio upgrade program that threatened production backup and recovery operations. I stepped in to <strong>identify the root cause of critical technical issues</strong> that had stalled the upgrade, working closely with the team to remediate configuration problems, resolve platform incompatibilities, and chart a path forward. The intervention enabled the team to <strong>successfully migrate to a new Actifio platform</strong>, modernising their environment management and ensuring continuity of backup operations across Kāinga Ora's infrastructure.</p>
         <div class="metrics">
           <span class="metric highlight">Diagnosed critical failure · Enabled successful migration</span>
         </div>
