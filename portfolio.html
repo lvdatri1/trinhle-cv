@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Trinh Le – Portfolio | Enterprise Architecture & Delivery</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.6; background:#f7f9fc; color:#1e1e2a; padding:0;
+    }
+
+    .container { max-width:1120px; margin:0 auto; padding:0 24px; }
+
+    /* ── Nav ── */
+    nav {
+      background:#1a2332; padding:14px 0; position:sticky; top:0; z-index:100;
+      box-shadow:0 2px 12px rgba(0,0,0,.12);
+    }
+    nav .container { display:flex; align-items:center; justify-content:space-between; }
+    nav .logo { color:#fff; font-weight:700; font-size:18px; letter-spacing:1px; }
+    nav .logo span { color:#8ab4f8; }
+    nav a { color:#b0bcca; text-decoration:none; font-size:13px; margin-left:28px; transition:color .2s; }
+    nav a:hover { color:#fff; }
+
+    /* ── Hero ── */
+    .hero {
+      background:linear-gradient(135deg,#1a2332 0%,#25344a 100%);
+      color:#fff; padding:72px 0 64px; text-align:center;
+    }
+    .hero h1 { font-size:44px; font-weight:800; letter-spacing:-.5px; }
+    .hero h1 span { color:#8ab4f8; }
+    .hero .sub { font-size:18px; color:#b8c7dd; margin-top:10px; max-width:680px; margin-left:auto; margin-right:auto; }
+    .hero .stats { display:flex; justify-content:center; gap:48px; margin-top:40px; flex-wrap:wrap; }
+    .hero .stat { text-align:center; }
+    .hero .stat .num { font-size:36px; font-weight:800; color:#8ab4f8; }
+    .hero .stat .label { font-size:13px; color:#9aadc9; text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+
+    /* ── Section ── */
+    .section { padding:64px 0; }
+    .section-alt { background:#fff; }
+    .section-title {
+      font-size:28px; font-weight:700; color:#1a2332; margin-bottom:8px;
+    }
+    .section-title small {
+      display:block; font-size:13px; font-weight:500; color:#6b7a93; text-transform:uppercase; letter-spacing:2px; margin-bottom:4px;
+    }
+    .section-desc { font-size:15px; color:#555; max-width:720px; margin-bottom:36px; }
+
+    /* ── Achievement Cards ── */
+    .achievements { display:grid; gap:28px; }
+    .card {
+      background:#fff; border-radius:16px; padding:36px 40px;
+      box-shadow:0 2px 16px rgba(0,0,0,.06); border:1px solid #edf0f5;
+      transition:box-shadow .25s, transform .25s;
+      position:relative; overflow:hidden;
+    }
+    .card:hover { box-shadow:0 8px 32px rgba(0,0,0,.1); transform:translateY(-2px); }
+    .card-alt { background:#f7f9fc; }
+    .card .tag {
+      font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+      color:#2c6faa; margin-bottom:6px;
+    }
+    .card h3 { font-size:22px; font-weight:700; color:#1a2332; margin-bottom:8px; }
+    .card p { font-size:14px; color:#444; line-height:1.7; }
+    .card .metric {
+      display:inline-block; background:#1a2332; color:#fff; font-size:13px; font-weight:700;
+      padding:2px 12px; border-radius:6px; margin-top:12px;
+    }
+    .card .metric.highlight { background:#2c6faa; }
+
+    .card-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+
+    /* ── Timeline highlight ── */
+    .highlight-timeline { position:relative; padding-left:28px; margin-top:12px; }
+    .highlight-timeline::before { content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:#d0d5dd; }
+    .highlight-timeline li {
+      position:relative; list-style:none; font-size:14px; color:#444; padding:0 0 14px 0;
+    }
+    .highlight-timeline li::before {
+      content:""; position:absolute; left:-22px; top:8px; width:8px; height:8px;
+      border-radius:50%; background:#2c6faa; border:2px solid #fff; box-shadow:0 0 0 2px #2c6faa;
+    }
+    .highlight-timeline li strong { color:#1a2332; }
+
+    /* ── Geography grid ── */
+    .geo-grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .geo-grid span {
+      background:#eef1f5; border:1px solid #d8dde6; color:#1a2332;
+      font-size:13px; font-weight:500; padding:6px 16px; border-radius:20px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background:#1a2332; color:#8896a8; text-align:center; padding:28px 24px; font-size:13px;
+    }
+    footer a { color:#8ab4f8; text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
+
+    @media (max-width:768px) {
+      .hero h1 { font-size:30px; }
+      .hero .stats { gap:24px; }
+      .hero .stat .num { font-size:28px; }
+      .card { padding:28px 24px; }
+      .card-row { grid-template-columns:1fr; }
+      nav a { margin-left:16px; font-size:12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">TRINH<span>LE</span></div>
+    <div>
+      <a href="#achievements">Achievements</a>
+      <a href="cvweb.html">CV</a>
+      <a href="https://linkedin.com/in/trinhle-b34b6334">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Turning Complex<br>into <span>Delivered</span></h1>
+    <p class="sub">Enterprise Solution Architect with a track record of delivering multi-million-dollar transformation programs — from housing and contact centres to global consumer brands.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">$100M+</div><div class="label">Transformation Programs</div></div>
+      <div class="stat"><div class="num">500+</div><div class="label">Contact Centre Agents</div></div>
+      <div class="stat"><div class="num">100K</div><div class="label">Units Sold (Milo Bands)</div></div>
+      <div class="stat"><div class="num">10</div><div class="label">Digital Projects / 1 Program</div></div>
+      <div class="stat"><div class="num">&lt;10%</div><div class="label">SA Allocation · Kotahi Upgrade</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="achievements">
+  <div class="container">
+    <div class="section-title"><small>Featured Work</small>Key Achievements</div>
+    <p class="section-desc">A selection of career-defining deliveries that showcase depth across solution architecture, program delivery, and product incubation.</p>
+
+    <div class="achievements">
+
+      <!-- 1. Greys Avenue -->
+      <div class="card">
+        <div class="tag">Enterprise Integration Architecture</div>
+        <h3>Greys Avenue (Te Mātāwai) — 24/7 Housing Service Model</h3>
+        <p>Kāinga Ora's flagship project to deliver a new 177-home housing development with an integrated 24/7 service model. The program required <strong>3 Solution Architect resources</strong> — I carried the solution architecture <strong>end-to-end as a single architect</strong>, covering integration architecture, cross-cloud orchestration, and platform design across <strong>10 digital projects</strong> under the same program. I also supported <strong>5 Business Analysts</strong> simultaneously across the full project portfolio, enabling requirements elucidation, solution design, and delivery sequencing.</p>
+        <div class="metric">Solo architect on a 3-person workload</div>
+        <div class="metric highlight">10 digital projects · 5 BAs supported</div>
+      </div>
+
+      <!-- 2. Genesys Cloud Migration -->
+      <div class="card card-alt">
+        <div class="tag">Cloud Migration & Contact Centre</div>
+        <h3>Genesys Engage → Genesys Cloud Migration</h3>
+        <p>Led the <strong>end-to-end solution architecture and migration</strong> from on-premise Genesys Engage to Genesys Cloud for <strong>500+ agents</strong>. This complex program spanned the full lifecycle: requirements gathering, vendor RFP, solution design, implementation, and cutover — all delivered in <strong>under 6 months</strong>. The migration enabled a modern, scalable contact centre platform with cross-cloud integrations spanning Azure, Oracle, Salesforce, ServiceNow, and NEC.</p>
+        <div class="metric highlight">Delivered in &lt;6 months · 500+ agents</div>
+      </div>
+
+      <!-- 3. Milo Champions Band & App -->
+      <div class="card">
+        <div class="tag">Product R&D to Global Rollout</div>
+        <h3>Milo Champions Band & Mobile App</h3>
+        <p>Led the <strong>full lifecycle from R&D to global delivery</strong> of the Milo Champions Band — a wearable + mobile app ecosystem for Nestlé's flagship brand. Starting as a research and development concept, I drove the architecture, vendor selection, and integration design that took the product to market across <strong>10+ countries</strong>. The band launched across Vietnam, Mexico, Brazil, Australia, and all Southeast Asian markets, selling <strong>100,000+ units in Australia alone</strong> and significant volumes across other regions. The program involved SAP e-commerce integrations and real-time data pipelines.</p>
+        <div class="metric">100,000+ units sold in Australia</div>
+        <div class="metric highlight">10+ countries · R&D to delivery</div>
+        <div class="geo-grid">
+          <span>🇻🇳 Vietnam</span>
+          <span>🇲🇽 Mexico</span>
+          <span>🇧🇷 Brazil</span>
+          <span>🇦🇺 Australia</span>
+          <span>🇮🇩 Indonesia</span>
+          <span>🇹🇭 Thailand</span>
+          <span>🇵🇭 Philippines</span>
+          <span>🇸🇬 Singapore</span>
+          <span>🇲🇾 Malaysia</span>
+          <span>🇵🇬 Papua New Guinea</span>
+        </div>
+      </div>
+
+      <!-- 4. Kotahi Upgrade -->
+      <div class="card card-alt">
+        <div class="tag">Legacy Platform Upgrade</div>
+        <h3>Kotahi — Minimal SA Footprint, On Time & Under Budget</h3>
+        <p>Kāinga Ora's legacy tenancy management software (Kotahi) required a critical platform upgrade. The program was staffed with dedicated Solution Architect resources — I reduced my involvement to <strong>less than 10% of a full-time SA allocation</strong> by enabling the delivery team with clear architectural guardrails, self-service patterns, and pre-authorised design decisions. The upgrade was delivered <strong>on time and under budget</strong>, proving that lean architecture can drive efficient outcomes without compromising quality.</p>
+        <div class="metric highlight">&lt;10% SA allocation · On time · Under budget</div>
+      </div>
+
+      <!-- 5. Integration Team Uplift -->
+      <div class="card">
+        <div class="tag">Capability Building & Platform Ownership</div>
+        <h3>Building an In-House Integration Platform Team</h3>
+        <p>I led the uplift of Kāinga Ora's integration team from reliant on external vendors to <strong>full in-house ownership</strong> of a complex Enterprise Integration Platform spanning <strong>Azure Integration Services (Logic Apps, API Management, Service Bus, Event Grid)</strong> and <strong>Oracle Integration Cloud (OIC)</strong>. The platform required intricate Infrastructure-as-Code configuration across <strong>Terraform, Bicep, and Azure DevOps CI/CD pipelines</strong>. Through pair-architecting, code reviews, and knowledge transfer, the team now independently manages, extends, and governs the entire integration estate — a capability that previously required ongoing external consultant support.</p>
+        <div class="metric">Azure Integration Services + Oracle Integration Cloud</div>
+        <div class="metric highlight">Terraform · Bicep · Azure DevOps CI/CD</div>
+      </div>
+
+      <!-- 6. Actifio Rescue -->
+      <div class="card card-alt">
+        <div class="tag">Recovery & Migration</div>
+        <h3>Actifio Upgrade — Diagnosed & Rescued a Failing Program</h3>
+        <p>The Release team was struggling with a failing Actifio upgrade program that threatened production backup and recovery operations. I stepped in to <strong>identify the root cause of critical technical issues</strong> that had stalled the upgrade, working closely with the team to remediate configuration problems, resolve platform incompatibilities, and chart a path forward. The intervention enabled the team to <strong>successfully migrate to a new Actifio platform</strong>, modernising their environment management and ensuring continuity of backup operations across Kāinga Ora's infrastructure.</p>
+        <div class="metric highlight">Diagnosed critical failure · Enabled successful migration</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title"><small>Delivery Snapshot</small>At a Glance</div>
+    <div class="card-row">
+      <div class="card">
+        <div class="tag">Program Scale</div>
+        <h3>10 Digital Projects, One Architect</h3>
+        <p>Single-handled the solution architecture for a portfolio of 10 concurrent digital projects under one program, supporting 5 BAs across requirements and delivery — a workload typically staffed with 3 solution architects.</p>
+      </div>
+      <div class="card card-alt">
+        <div class="tag">Speed</div>
+        <h3>&lt;6-Month Contact Centre Migration</h3>
+        <p>Full lifecycle delivery of a Genesys Cloud migration for 500+ agents — from requirements through RFP, design, implementation, and cutover — in under six months, with complex cross-cloud integrations.</p>
+      </div>
+    </div>
+    <div class="card-row" style="margin-top:24px;">
+      <div class="card card-alt">
+        <div class="tag">Global Reach</div>
+        <h3>10+ Country Product Launch</h3>
+        <p>Took the Milo Champions Band & app from R&D concept to deployed product across Vietnam, Mexico, Brazil, Australia, and all of Southeast Asia.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Consumer Impact</div>
+        <h3>100,000+ Bands Sold</h3>
+        <p>Proven commercial success — 100,000+ units in Australia alone, with significant volumes in Brazil, Mexico, Vietnam, and Southeast Asian markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title"><small>How I Work</small>Approach & Philosophy</div>
+    <div class="card-row">
+      <div class="card">
+        <h3>Architecture-Led Delivery</h3>
+        <p>I don't just draw diagrams — I own outcomes. From requirements to cutover, I partner with business stakeholders, BAs, and engineering teams to ensure architecture translates into working systems.</p>
+      </div>
+      <div class="card card-alt">
+        <h3>Full-Stack Solutioning</h3>
+        <p>I bridge enterprise integration, cloud platforms, and consumer-facing products. Whether it's a contact centre migration or a wearable device ecosystem, I bring the same rigor and delivery focus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Trinh Le &mdash; <a href="cvweb.html">View CV</a> &middot; <a href="https://linkedin.com/in/trinhle-b34b6334">LinkedIn</a> &middot; <a href="mailto:lvdatri@gmail.com">lvdatri@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
