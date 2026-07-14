@@ -15,14 +15,27 @@ function buildLandscape() {
 
   const timeline = D.experience.map(e => {
     const desc = e.desc ? `\n            <div class="company-desc">${esc(e.desc)}</div>` : "";
-    const bullets = e.bullets.map(b => `                <li>${b}</li>`).join("\n");
+
+    let content = "";
+    if (e.responsibilities || e.achievements) {
+      if (e.responsibilities && e.responsibilities.length > 0) {
+        const items = e.responsibilities.map(b => `                  <li>${b}</li>`).join("\n");
+        content += `              <div class="exp-subsection">\n                <div class="exp-label">Responsibilities</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
+      }
+      if (e.achievements && e.achievements.length > 0) {
+        const items = e.achievements.map(b => `                  <li>${b}</li>`).join("\n");
+        content += `              <div class="exp-subsection">\n                <div class="exp-label">Achievements</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
+      }
+    } else if (e.bullets) {
+      const bullets = e.bullets.map(b => `                <li>${b}</li>`).join("\n");
+      content = `              <ul>\n${bullets}\n              </ul>`;
+    }
+
     return `            <div class="timeline-item">
               <div class="date">${e.date}</div>
               <div class="role-title">${e.title}</div>
               <div class="company">${esc(e.company)}</div>${desc}
-              <ul>
-${bullets}
-              </ul>
+${content.trimEnd()}
             </div>`;
   }).join("\n\n");
 
@@ -82,6 +95,9 @@ ${bullets}
     .timeline-item .company-desc { font-size:12px; color:#888; font-style:italic; margin-bottom:6px; }
     .timeline-item ul { padding-left:18px; font-size:13.5px; }
     .timeline-item li { margin-bottom:4px; }
+    .exp-subsection { margin-top: 8px; }
+    .exp-subsection:first-of-type { margin-top: 6px; }
+    .exp-label { font-size:10.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#2c6faa; margin-bottom:3px; }
 
     .compact-list { list-style:none; padding:0; }
     .compact-list li { font-size:14px; padding:4px 0; border-bottom:1px solid #f0f2f4; }
@@ -166,14 +182,27 @@ function buildPortrait() {
 
   const timeline = D.experience.map(e => {
     const desc = e.desc ? `\n            <div class="company-desc">${esc(e.desc)}</div>` : "";
-    const bullets = e.bullets.map(b => `                <li>${b}</li>`).join("\n");
+
+    let content = "";
+    if (e.responsibilities || e.achievements) {
+      if (e.responsibilities && e.responsibilities.length > 0) {
+        const items = e.responsibilities.map(b => `                  <li>${b}</li>`).join("\n");
+        content += `              <div class="exp-subsection">\n                <div class="exp-label">Responsibilities</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
+      }
+      if (e.achievements && e.achievements.length > 0) {
+        const items = e.achievements.map(b => `                  <li>${b}</li>`).join("\n");
+        content += `              <div class="exp-subsection">\n                <div class="exp-label">Achievements</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
+      }
+    } else if (e.bullets) {
+      const bullets = e.bullets.map(b => `                <li>${b}</li>`).join("\n");
+      content = `              <ul>\n${bullets}\n              </ul>`;
+    }
+
     return `          <div class="timeline-item">
               <div class="date">${e.date}</div>
               <div class="role-title">${e.title}</div>
               <div class="company">${esc(e.company)}</div>${desc}
-              <ul>
-${bullets}
-              </ul>
+${content.trimEnd()}
             </div>`;
   }).join("\n\n");
 
@@ -226,6 +255,9 @@ ${bullets}
     .timeline-item .company-desc { font-size:11.5px; color:#999; font-style:italic; margin-bottom:4px; }
     .timeline-item ul { padding-left:16px; font-size:13px; }
     .timeline-item li { margin-bottom:3px; }
+    .exp-subsection { margin-top: 8px; }
+    .exp-subsection:first-of-type { margin-top: 6px; }
+    .exp-label { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#2c6faa; margin-bottom:3px; }
 
     .compact-list { list-style:none; padding:0; }
     .compact-list li { font-size:13.5px; padding:3px 0; border-bottom:1px solid #f0f2f4; }
