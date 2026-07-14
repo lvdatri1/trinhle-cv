@@ -147,7 +147,7 @@ ${certs}
     <div class="section">
       <div class="section-title">Executive Profile</div>
       <div class="profile-text">
-        <p>${D.profile[0]}</p>
+        ${D.profile.map(p => `          <p>${p}</p>`).join("\n")}
         <ul>
 ${D.profileHighlights.map(h => `          <li>${h}</li>`).join("\n")}
         </ul>
@@ -288,7 +288,7 @@ ${content.trimEnd()}
   <div class="section">
     <div class="section-title">Executive Profile</div>
     <div class="profile-text">
-      <p>${D.profile[0]}</p>
+      ${D.profile.map(p => `      <p>${p}</p>`).join("\n")}
       <ul>
 ${D.profileHighlights.map(h => `        <li>${h}</li>`).join("\n")}
       </ul>
