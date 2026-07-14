@@ -1,0 +1,148 @@
+{
+  "name": "Trinh Le",
+  "role": "Integration Architect | Senior Solution Architect",
+  "subtitle": "Enterprise Integration | Architecture Strategy and Governance | Digital Transformation",
+  "location": "Wellington, New Zealand",
+  "phone": "+64 22 414 6855",
+  "email": "lvdatri@gmail.com",
+  "linkedin": "https://linkedin.com/in/trinhle-b34b6334",
+  "cvUrl": "https://lvdatri1.github.io/trinhle-cv/",
+  "lastUpdated": "June 2026",
+  "skills": [
+    "Integration Architecture",
+    "Enterprise Architecture",
+    "Solution Architecture",
+    "Integration Strategy and Roadmaps",
+    "Architecture Principles and Standards",
+    "Reference Architectures and Patterns",
+    "Architecture Governance",
+    "Domain Maturity Development",
+    "Target-State Architecture",
+    "TOGAF",
+    "ArchiMate",
+    "New Zealand Government ICT Standards",
+    "API Strategy and Management",
+    "API-First Architecture",
+    "Event-Driven Architecture",
+    "Enterprise Messaging",
+    "Workflow Orchestration",
+    "Microservices Architecture",
+    "Domain-Driven Design",
+    "Hybrid and Multi-Cloud Architecture",
+    "Azure Integration Services",
+    "Oracle Integration Cloud",
+    "Amazon Web Services",
+    "Infrastructure as Code",
+    "Terraform",
+    "CI/CD and DevSecOps",
+    "AI-Enabled Automation",
+    "Security Architecture",
+    "NZISM",
+    "OWASP",
+    "Stakeholder Engagement and Influence",
+    "Technical Leadership and Mentoring"
+  ],
+  "certifications": [
+    "AWS Certified Solutions Architect – 2020",
+    "Google Cloud Machine Learning and Big Data – 2019",
+    "Certified Scrum Product Owner – 2016",
+    "EMC System Engineer – 2010",
+    "Cisco Certified Network Associate – 2008",
+    "Microsoft Certified Systems Engineer – 2008"
+  ],
+  "education": [
+    "<strong>Master of Information Technology</strong> – Monash University, 2012",
+    "<strong>Bachelor of Computer Science</strong> – Hue University, 2006"
+  ],
+  "interests": "Travel • Photography • Gaming • Badminton • Road Trips • Cycling",
+  "profile": [
+    "Integration Architect and Senior Solution Architect with extensive experience defining, governing, and delivering enterprise integration architecture across complex public-sector and commercial environments. Proven ability to translate organisational strategy and business needs into secure, scalable, and reusable integration capabilities.",
+    "Combines public-sector architecture experience with international commercial experience delivering digital platforms and integration solutions for leading global brands, including <strong>Nestlé, Coca-Cola, and Unilever</strong>."
+  ],
+  "profileHighlights": [   
+    "Experienced in defining <strong>integration strategies, principles, standards, reference architectures, and reusable patterns</strong>",
+    "Specialist in <strong>API-first, event-driven, enterprise messaging, workflow orchestration, microservices, and hybrid integration architectures</strong>",
+    "Extensive experience across <strong>Azure Integration Services, Oracle Integration Cloud, AWS, Salesforce, ServiceNow, and Genesys Cloud</strong>",
+    "Strong architecture governance capability, including presenting solution options, risks, and recommendations to architecture and technical review forums",
+    "Experienced in delivering solutions aligned with <strong>security-by-design and privacy-by-design principles</strong>, including identity and access management, data protection, encryption, auditability, and secure system integration",
+    "Knowledge of <strong>NZISM, the New Zealand Privacy Act, GDPR principles, government ICT standards, and international enterprise security and privacy requirements</strong>",
+    "Proven ability to provide pragmatic architectural direction across strategy, design, and delivery while working with senior stakeholders, engineers, suppliers, and technology partners"
+  ],
+  "experience": [
+    {
+      "date": "2024 – Present",
+      "title": "Solution Architect – Integration",
+      "company": "Kāinga Ora – Homes and Communities",
+      "desc": "New Zealand's largest public housing provider",
+      "responsibilities": [
+        "Define and lead integration architecture across major transformation initiatives, aligning domain direction with <strong>enterprise architecture, security expectations, organisational strategy, and long-term business needs</strong>",
+        "Architect an enterprise integration platform based on <strong>Azure Integration Services and Oracle Integration Cloud</strong>, connecting more than 12 core systems across tenancy, asset management, procurement, HR, finance, and data",
+        "Develop <strong>integration principles, standards, reference patterns, design guidance, and platform guardrails</strong> that promote reuse, consistency, interoperability, and scalability",
+        "Contribute integration-domain perspectives to target-state architectures, technology roadmaps, investment decisions, and architecture governance forums",
+        "Partner with senior stakeholders, product teams, security specialists, data teams, engineers, suppliers, and technology partners to translate business needs into practical integration solutions",
+        "Provide hands-on architectural direction to product-based and agile delivery teams throughout design, implementation, assurance, and operational transition"
+      ],
+      "achievements": [
+        "Provided integration architecture leadership for a <strong>NZ$100M+ technology modernisation programme</strong> spanning tenancy, procure-to-pay, HR, finance, asset delivery, and data and insights platforms",
+        "Led the introduction of <strong>automated workflows and intelligent orchestration</strong> within the MDS programme, reducing manual effort and improving operational efficiency across business and support teams",
+        "Established reusable integration patterns and governance practices that reduced point-to-point dependencies and improved solution consistency, maintainability, and scalability",
+        "Coached and mentored more than three integration engineers through design reviews, workshops, and hands-on guidance, strengthening domain maturity and enabling sustainable in-house platform ownership"
+      ]
+    },
+    {
+      "date": "2021 – 2024",
+      "title": "Solution Architect",
+      "company": "Kāinga Ora – Homes and Communities",
+      "desc": "New Zealand's largest public housing provider",
+      "responsibilities": [
+        "Designed and governed <strong>cross-cloud and enterprise solutions</strong> spanning Azure, Oracle Cloud, Salesforce, ServiceNow, Genesys Cloud, and the NEC housing management platform",
+        "Translated business and programme objectives into solution architectures, options assessments, technical roadmaps, and delivery guidance",
+        "Provided architecture leadership across four cross-functional teams and contributed to governance, technical assurance, and complex cross-domain decision-making"
+      ],
+      "achievements": [
+        "Led the end-to-end architecture and migration of more than <strong>500 contact-centre agents</strong> from on-premises Genesys Engage to Genesys Cloud, delivering a complex enterprise transformation within six months from programme initiation to go-live.",
+        "Delivered critical upgrades to the <strong>Actifio disaster-recovery platform and NEC housing management system</strong> with no unplanned disruption to more than 2,500 users",
+        "Delivered integration architecture for <strong>Te Mātāwai – Greys Avenue</strong>, enabling a 24/7 housing and support-service model for more than 200 residents"
+      ]
+    },
+    {
+      "date": "2018 – 2021",
+      "title": "Digital Solution Architect",
+      "company": "Health Promotion Agency",
+      "desc": "New Zealand government agency responsible for nationwide health-promotion initiatives",
+      "responsibilities": [
+        "Defined solution architectures and cloud-adoption approaches for national digital-health and public-engagement services",
+        "Led architecture across cloud migration, application modernisation, integration, data, automation, and digital-channel initiatives",
+        "Worked with programme leaders, health specialists, delivery partners, and technology vendors to translate public-health needs into secure, resilient, and accessible digital services"
+      ],
+      "achievements": [
+        "Led the migration of more than <strong>20 legacy workloads to AWS</strong>, reducing monthly infrastructure costs by approximately 80% while improving performance, resilience, and scalability",
+        "Designed and deployed <strong>AI-powered conversational platforms using natural language processing and machine learning</strong> for mental-health support, handling more than 10,000 conversations per month",
+        "Helped enable nationwide digital-health services that improved access to mental-health information and support for more than 50,000 people across New Zealand",
+        "Received the <strong>Data Hackathon Aotearoa 2020 Award</strong> for developing a predictive analytics solution that forecast patient onboarding outcomes, enabling earlier intervention and improved service planning."
+      ]
+    },
+    {
+      "date": "2014 – 2018",
+      "title": "Senior Technical Project Manager → Technical Director",
+      "company": "Ogilvy Vietnam",
+      "responsibilities": [
+        "Led the architecture and technical delivery of enterprise digital platforms, e-commerce solutions, system integrations, and customer-engagement experiences",
+        "Provided technical direction across application architecture, integration, cloud hosting, security, performance, and production operations"
+      ],
+      "achievements": [
+        "Owned end-to-end solution architecture for enterprise e-commerce platforms and SAP-integrated digital services supporting Nestlé Global and major consumer brands including Milo, Nescafé, and KitKat",
+        "Progressed from Senior Technical Project Manager to Technical Director in recognition of technical leadership, stakeholder management, and delivery performance"
+      ]
+    },
+    {
+      "date": "Earlier Career",
+      "title": "IT Manager | Java Developer | Systems Administrator",
+      "company": "Apollo English and Earlier Organisations",
+      "achievements": [
+        "Managed business applications, networks, end-user services, and IT infrastructure for a major English-language education provider operating across multiple campuses in Vietnam",
+        "Developed hands-on experience across software development, systems administration, networking, infrastructure, and production support, grounding later architecture decisions in operational reality"
+      ]
+    }
+  ]
+}

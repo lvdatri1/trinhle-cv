@@ -2,7 +2,6 @@ node_modules/
 *.plantuml
 *.csv
 *.py
-*.json
 *.md
 !README.md
 TrinhLe-cv-html.html
