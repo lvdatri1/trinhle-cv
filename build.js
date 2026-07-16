@@ -2,6 +2,8 @@ const fs = require("fs");
 const data = JSON.parse(fs.readFileSync("cv-data.json", "utf8"));
 
 const D = data;
+const now = new Date();
+const updatedDate = now.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
 function esc(s) {
   return (s || "").replace(/&/g, "&amp;")
@@ -18,20 +20,20 @@ function buildLandscape() {
 
     let content = "";
     if (e.responsibilities || e.achievements) {
-      if (e.responsibilities && e.responsibilities.length > 0) {
-        const items = e.responsibilities.map(b => `                  <li>${b}</li>`).join("\n");
-        content += `              <div class="exp-subsection">\n                <div class="exp-label">Responsibilities</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
-      }
       if (e.achievements && e.achievements.length > 0) {
         const items = e.achievements.map(b => `                  <li>${b}</li>`).join("\n");
         content += `              <div class="exp-subsection">\n                <div class="exp-label">Achievements</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
+      }
+      if (e.responsibilities && e.responsibilities.length > 0) {
+        const items = e.responsibilities.map(b => `                  <li>${b}</li>`).join("\n");
+        content += `              <div class="exp-subsection">\n                <div class="exp-label">Responsibilities</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
       }
     } else if (e.bullets) {
       const bullets = e.bullets.map(b => `                <li>${b}</li>`).join("\n");
       content = `              <ul>\n${bullets}\n              </ul>`;
     }
 
-    return `            <div class="timeline-item">
+    return `          <div class="timeline-item">
               <div class="date">${e.date}</div>
               <div class="role-title">${e.title}</div>
               <div class="company">${esc(e.company)}</div>${desc}
@@ -169,7 +171,7 @@ ${D.education.map(e => `        <li>${e}</li>`).join("\n")}
     </div>
 
     <hr />
-    <p style="font-size:12px;color:#999;"><em>Last Updated: ${esc(D.lastUpdated)}</em></p>
+    <p style="font-size:12px;color:#999;"><em>Last Updated: ${esc(updatedDate)}</em></p>
   </div>
 </div>
 </body>
@@ -185,13 +187,13 @@ function buildPortrait() {
 
     let content = "";
     if (e.responsibilities || e.achievements) {
-      if (e.responsibilities && e.responsibilities.length > 0) {
-        const items = e.responsibilities.map(b => `                  <li>${b}</li>`).join("\n");
-        content += `              <div class="exp-subsection">\n                <div class="exp-label">Responsibilities</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
-      }
       if (e.achievements && e.achievements.length > 0) {
         const items = e.achievements.map(b => `                  <li>${b}</li>`).join("\n");
         content += `              <div class="exp-subsection">\n                <div class="exp-label">Achievements</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
+      }
+      if (e.responsibilities && e.responsibilities.length > 0) {
+        const items = e.responsibilities.map(b => `                  <li>${b}</li>`).join("\n");
+        content += `              <div class="exp-subsection">\n                <div class="exp-label">Responsibilities</div>\n                <ul>\n${items}\n                </ul>\n              </div>\n`;
       }
     } else if (e.bullets) {
       const bullets = e.bullets.map(b => `                <li>${b}</li>`).join("\n");
@@ -330,7 +332,7 @@ ${certs}
   </div>
 
   <hr />
-  <p style="font-size:11px;color:#999;"><em>Last Updated: ${esc(D.lastUpdated)}</em></p>
+  <p style="font-size:11px;color:#999;"><em>Last Updated: ${esc(updatedDate)}</em></p>
 </div>
 </body>
 </html>`;

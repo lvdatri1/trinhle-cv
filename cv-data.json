@@ -56,18 +56,16 @@
   ],
   "interests": "Travel • Photography • Gaming • Badminton • Road Trips • Cycling",
   "profile": [
-    "Integration Architect and Senior Solution Architect with extensive experience defining, governing, and delivering enterprise integration architecture across complex public-sector and commercial environments. Proven ability to translate organisational strategy and business needs into secure, scalable, and reusable integration capabilities.",
-    "Combines public-sector architecture experience with international commercial experience delivering digital platforms and integration solutions for leading global brands, including <strong>Nestlé, Coca-Cola, and Unilever</strong>."
+    "Integration Architect and Senior Solution Architect with extensive experience delivering enterprise integration and digital transformation across complex public-sector and commercial environments. Proven track record translating business strategy into secure, scalable, and reusable technology capabilities. Combines New Zealand public-sector architecture leadership with international experience delivering platforms and integrations for global organisations including Nestlé, Coca-Cola, and Unilever."
   ],
-  "profileHighlights": [   
-    "Experienced in defining <strong>integration strategies, principles, standards, reference architectures, and reusable patterns</strong>",
-    "Specialist in <strong>API-first, event-driven, enterprise messaging, workflow orchestration, microservices, and hybrid integration architectures</strong>",
-    "Extensive experience across <strong>Azure Integration Services, Oracle Integration Cloud, AWS, Azure, Oracle OCI, ServiceNow, and Genesys Cloud</strong>",
-    "Strong architecture governance capability, including presenting solution options, risks, and recommendations to architecture and technical review forums",
-    "Experienced in delivering solutions aligned with <strong>security-by-design and privacy-by-design principles</strong>, including identity and access management, data protection, encryption, auditability, and secure system integration",
-    "Knowledge of <strong>NZISM, the New Zealand Privacy Act, GDPR principles, government ICT standards, and international enterprise security and privacy requirements</strong>",
-    "Proven ability to provide pragmatic architectural direction across strategy, design, and delivery while working with senior stakeholders, engineers, suppliers, and technology partners"
-  ],
+  "profileHighlights": [
+    "Defines integration strategies, standards, reference architectures, governance frameworks, and reusable patterns",
+    "Specialist in API-first, event-driven, messaging, orchestration, microservices, and hybrid integration architectures",
+    "Deep experience across Azure Integration Services, Oracle Integration Cloud, AWS, ServiceNow, and Genesys Cloud",
+    "Strong architecture governance and stakeholder engagement capability, supporting strategic investment and technology decisions",
+    "Experienced in security-by-design, privacy-by-design, NZISM, New Zealand Privacy Act, GDPR, identity management, and secure system integration",
+    "Provides pragmatic architecture leadership across strategy, design, governance, and delivery"
+    ],
   "experience": [
     {
       "date": "2024 – Present",
